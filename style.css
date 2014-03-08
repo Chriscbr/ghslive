@@ -1,0 +1,144 @@
+/* http://lea.verou.me/css3patterns/*/
+
+body {
+/* background-color: silver;
+background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px),
+linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px);
+background-size: 58px 58px;	*/
+background-image:url('bricks.jpg');
+background-repeat:repeat;
+background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+font-family:"Trebuchet MS", sans-serif;
+}
+
+#container {
+width:50em;
+margin:3em auto;
+padding:0;
+transform:rotate(3deg);
+-ms-transform:rotate(3deg); /* IE 9 */
+-webkit-transform:rotate(3deg); /* Safari and Chrome */
+-webkit-box-shadow: 7px 7px 10px rgba(0, 0, 0, 1);
+-moz-box-shadow:    7px 7px 10px rgba(0, 0, 0, 1);
+box-shadow:         7px 7px 10px rgba(0, 0, 0, 1);
+position:relative;
+animation-duration:1s;
+animation-name:slidein;
+-webkit-animation-duration:2s;
+-webkit-animation-name:slidein;
+}
+
+@keyframes slidein {
+  from {
+    top:-1000px;
+  }
+ 
+  to {
+    top:0px;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    top:-1000px;
+  }
+ 
+  to {
+    top:0px;
+  }
+}
+
+#content {
+margin:0;
+padding:1em;
+text-align:center;
+background-color:#FFFFFF;
+-webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+-moz-box-shadow:    inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+box-shadow:         inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+font-size:72px;
+margin:0;
+}
+
+h2 {
+font-size:36px;
+margin:0;
+}
+
+h3 {
+font-size:24px;
+margin:0;
+}
+
+p {
+font-size:18px;
+margin:0;
+}
+
+#periodContainer {
+	border: 5px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+	width: 350px;
+	margin: 1em auto 0 auto;
+}
+
+#periodDisplay {
+	padding: 0;
+	margin: 0;
+}
+
+#periodDisplay li {
+	list-style-type: none;
+	font-size: 24px;
+	margin: 0;
+	padding: 1em;
+	display: inline;
+	font-weight: bold;
+}
+
+table {
+	border:2px solid #000;
+	border-radius: 10px;
+	border-collapse:separate;
+	font-size:1.2em;
+	margin:10px auto;
+}
+
+table, td, th {
+	padding: 3px;
+}
+
+#countdown {
+	text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+	-webkit-animation:spin 3s infinite;
+	-webkit-perspective:100px;
+	display:block;
+}
+
+@-webkit-keyframes spin /* Safari and Chrome */
+{
+0%  {-webkit-transform: rotateY(0deg);}
+50%  {-webkit-transform: rotateY(180deg);}
+100% {-webkit-transform: rotateY(0deg);}
+}
+
+#note {
+	margin:0;
+}
