@@ -55,7 +55,7 @@ note: numbers starting with 0 less than 0778 will be converted to octal, so
 omit the 0 unless necessary
 */
 var blockTimes = [ // [displayText, startTime, endTime],
-["", 0, 719],
+["The school day has not yet started", 0, 719],
 ["Block 1 (starts in %t minutes)", 720, 724],
 ["Block 1 (ends in %t minutes)", 725, 830],
 ["Block 2 (starts in %t minutes)", 831, 833],
@@ -69,10 +69,10 @@ var blockTimes = [ // [displayText, startTime, endTime],
 ["Third Lunch (starts in %t minutes)", 1210, 1218],
 ["Third Lunch (ends in %t minutes)", 1219, 1243],
 ["Block 5 (starts in %t minutes)", 1244, 1246],
-["Block 5 (ends in %t minutes)", 1247, 1355]
+["Block 5 (ends in %t minutes)", 1247, 1355],
+["The school day has ended", 1356, 2359],
+["", 2400, 2400] // used to prevent the last item from being skipped
 ];
-
-// return str.replace(/%t/, time);
 
 // Converts a time from HHMM to a time (ms since 1970)
 var formatTimeToMs = function(time) {
@@ -112,12 +112,28 @@ var getCurrentBlock = function(time) {
 	}
 }
 
+// Returns a string for the message that indicates the time left in the current block
+var displayBlockMessage = function(block, time) {
+	if (block !== -1) {
+		var message = blockTimes[block][0];
+		var currentTime = time.getTime();
+		var endTime = formatTimeToMs(blockTimes[block][2]);
+		
+		var diffTime = Math.ceil((endTime + (60 * 1000) - currentTime) / (60 * 1000)); // adds one second to end time; divides by # to calculate minutes, not milliseconds
+		
+		return message.replace(/%t/, diffTime);
+	} else {
+		return "";
+	}
+}
+
 /*
-var exampleTime = new Date(2014, 2, 4); // for debugging, use Y, M-1, D
+var exampleTime = new Date(2014, 2, 10); // for debugging, use Y, M-1, D
 exampleTime.setHours(7);
-exampleTime.setMinutes(30);
+exampleTime.setMinutes(25);
 exampleTime.setSeconds(0);
-console.log(getCurrentBlock(exampleTime));
+console.log(exampleTime);
+console.log(displayBlockMessage(2, exampleTime));
 */
 
 var prevDate;
@@ -140,7 +156,15 @@ function updateTime() {
 	var m = (today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes());
 	var s = (today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds());
 	document.getElementById("time").innerHTML = weekday + ", " + monthName + " " + day + ", " + year + " at " + (h > 12 ? h - 12 : h) + ":" + m + ":" + s + (h < 12 ? " AM" : " PM");
-	// document.getElementById("block").innerHTML = "GHSLive will open on Wednesday"
+	if (isDayOff(day, month, year)) {
+		document.getElementById("block").innerHTML = dayOffMsg(day, month, year);
+	} else if (weekday === "Saturday" || weekday === "Sunday") {
+		document.getElementById("block").innerHTML = "";
+	} else {
+		var currentBlock = getCurrentBlock(today);
+		document.getElementById("block").innerHTML = displayBlockMessage(currentBlock, today);
+	}
+	/*
 	if (isDayOff(day, month, year)) {
 		document.getElementById("block").innerHTML = dayOffMsg(day, month, year);
 	} else if (weekday === "Saturday" || weekday === "Sunday") {
@@ -190,6 +214,7 @@ function updateTime() {
 	} else {
 		document.getElementById("block").innerHTML = "The school day has ended!";
 	}
+	*/
 	t = setTimeout(function(){updateTime()},1000);
 }
 
