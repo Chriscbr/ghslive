@@ -157,9 +157,9 @@ table, td, th {
 	box-shadow:         inset 0px 0px 20px rgba(0, 0, 0, 0.5);
 	padding:20px;
 	background-color:#FFFFFF;
-	text-align:right;
+	text-align:center;
 }
 
 input {
-	padding: 5px;
+	margin:5px;
 }
