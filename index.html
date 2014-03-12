@@ -14,7 +14,9 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <link rel="stylesheet" href="add2home.css">
+
 <script src="time.js"></script>
+
 <script type="text/javascript">
 var addToHomeConfig = {
 	returningVisitor: true,
@@ -36,7 +38,7 @@ var addToHomeConfig = {
 </script>
 </head>
 
-<body onload="load()">
+<body id = "background">
 <div id="container">
 <div id="content">
 <h1>GHS Live</h1>
@@ -123,9 +125,11 @@ var addToHomeConfig = {
 <div id="bgChangeContainer">
 
 <p>Use custom background:</p>
-<input type="file" id="files">
+<input type="file" id="bgfile">
 
 </div>
+
+<script src="customBG.js"></script>
 
 </body>
 

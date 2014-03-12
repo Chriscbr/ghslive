@@ -280,3 +280,7 @@ function getSchedules(day, month, year) {
 		return schedules[dayNumber];
 	}
 }
+
+window.onload = function() {
+	load();
+}
