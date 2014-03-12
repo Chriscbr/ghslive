@@ -164,57 +164,6 @@ function updateTime() {
 		var currentBlock = getCurrentBlock(today);
 		document.getElementById("block").innerHTML = displayBlockMessage(currentBlock, today);
 	}
-	/*
-	if (isDayOff(day, month, year)) {
-		document.getElementById("block").innerHTML = dayOffMsg(day, month, year);
-	} else if (weekday === "Saturday" || weekday === "Sunday") {
-		document.getElementById("block").innerHTML = "Have a great weekend!";
-	} else if (h < 7) {
-		document.getElementById("block").innerHTML = "School starts in " + (((7 - h) * 60) + (20 - m) > 60 ? Math.floor((((7 - h) * 60) + (20 - m)) / 60) + " hours and " : "") + ((((7 - h) * 60) + (20 - m)) % 60) + " minutes";
-	} else if (h === 7 && m < 20) {
-		document.getElementById("block").innerHTML = "Block 1 starts in " + (20 - m) + " minutes";
-	} else if (h === 7 && m > 19) {
-		document.getElementById("block").innerHTML = "Block 1 (ends in " + (60 + (30 - m)) + " minutes)";
-	} else if (h === 8 && m < 30) {
-		document.getElementById("block").innerHTML = "Block 1 (ends in " + (30 - m) + " minutes)";
-	} else if (h === 8 && m > 29 && m < 34) {
-		document.getElementById("block").innerHTML = "Block 2 starts in " + (34 - m) + " minutes";
-	} else if (h === 8 && m > 33) {
-		document.getElementById("block").innerHTML = "Block 2 (ends in " + (60 + (38 - m)) + " minutes)";
-	} else if (h === 9 && m < 38) {
-		document.getElementById("block").innerHTML = "Block 2 (ends in " + (38 - m) + " minutes)";
-	} else if (h === 9 && m > 37) {
-		document.getElementById("block").innerHTML = "Advisory (ends in " + (60 + (3 - m)) + " minutes)";
-	} else if (h === 10 && m < 3) {
-		document.getElementById("block").innerHTML = "Advisory (ends in " + (3 - m) + " minutes)";
-	} else if (h === 10 && m > 2 && m < 7) {
-		document.getElementById("block").innerHTML = "Block 3 starts in " + (7 - m) + " minutes";
-	} else if (h === 10 && m > 8) {
-		document.getElementById("block").innerHTML = "Block 3 (ends in " + (60 + (11 - m)) + " minutes)";
-	} else if (h === 11 && m < 11) {
-		document.getElementById("block").innerHTML = "Block 3 (ends in " + (11 - m) + " minutes)";
-	} else if (h === 11 && m > 10 && m < 35) {
-		document.getElementById("block").innerHTML = "Block 4 - First Lunch (ends in " + (35 - m) + " minutes)";
-	} else if (h === 11 && m > 34 && m < 45) {
-		document.getElementById("block").innerHTML = "Block 4 - Second Lunch starts in " + (45 - m) + " minutes";
-	} else if (h === 11 && m > 44) {
-		document.getElementById("block").innerHTML = "Block 4 - Second Lunch (ends in " + (60 + (9 - m)) + " minutes)";
-	} else if (h === 12 && m < 9) {
-		document.getElementById("block").innerHTML = "Block 4 - Second Lunch (ends in " + (9 - m) + " minutes)";
-	} else if (h === 12 && m > 8 && m < 19) {
-		document.getElementById("block").innerHTML = "Block 4 - Third Lunch starts in " + (19 - m) + " minutes";
-	} else if (h === 12 && m > 18 && m < 43) {
-		document.getElementById("block").innerHTML = "Block 4 - Third Lunch (ends in " + (43 - m) + " minutes)";
-	} else if (h === 12 & m > 42 && m < 47) {
-		document.getElementById("block").innerHTML = "Block 5 starts in " + (47 - m) + " minutes";
-	} else if (h === 12 && m > 46) {
-		document.getElementById("block").innerHTML = "Block 5 (ends in " + (60 + (50 - m)) + " minutes)";
-	} else if (h === 13 && m < 50) {
-		document.getElementById("block").innerHTML = "Block 5 (ends in " + (50 - m) + " minutes)";
-	} else {
-		document.getElementById("block").innerHTML = "The school day has ended!";
-	}
-	*/
 	t = setTimeout(function(){updateTime()},1000);
 }
 
