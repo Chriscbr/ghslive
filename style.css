@@ -148,7 +148,7 @@ table, td, th {
 	right:0;
 	bottom:0;
 	width:200px;
-	height:60px;
+	height:80px;
 	-webkit-border-top-left-radius: 50px;
 	-moz-border-radius-topleft: 50px;
 	border-top-left-radius: 50px;
@@ -157,6 +157,9 @@ table, td, th {
 	box-shadow:         inset 0px 0px 20px rgba(0, 0, 0, 0.5);
 	padding:20px;
 	background-color:#FFFFFF;
-	text-align:center;
-	line-height:30px;
+	text-align:right;
+}
+
+input {
+	padding: 5px;
 }
