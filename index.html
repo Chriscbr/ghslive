@@ -2,43 +2,43 @@
 <html>
 
 <head>
-<title>GHS Live</title>
+  <title>GHS Live</title>
 
-<meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="GHS Live">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-title" content="GHS Live">
 
-<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-<link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" href="favicon.ico">
 
-<link rel="stylesheet" type="text/css" href="normalize.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="add2home.css">
-    
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="add2home.css">
+
 </head>
 
-<body id = "background">
-<div id="container">
-<div id="content">
-<h1>GHS Live</h1>
+<body id="background">
+  <div id="container">
+    <div id="content">
+      <h1>GHS Live</h1>
 
-<h3>It is currently:</h3>
-<h2 id="time">Loading...</h2>
-<h2 id="block"></h2>
+      <h3>It is currently:</h3>
+      <h2 id="time">Loading...</h2>
+      <h2 id="block"></h2>
 
-<br>
+      <br>
 
-<h2>Today's Periods:</h2>
-<div id="periodContainer">
-<ul id="periodDisplay">
-<li id="block1">-</li>
-<li id="block2">-</li>
-<li id="block3">-</li>
-<li id="block4">-</li>
-<li id="block5">-</li>
-</ul>
-</div>
+      <h2>Today's Periods:</h2>
+      <div id="periodContainer">
+        <ul id="periodDisplay">
+          <li id="block1">-</li>
+          <li id="block2">-</li>
+          <li id="block3">-</li>
+          <li id="block4">-</li>
+          <li id="block5">-</li>
+        </ul>
+      </div>
 
-<!-- <br>
+      <!-- <br>
 
 <h2>Today's Schedule</h2>
 <table>
@@ -93,44 +93,49 @@
 </tbody>
 </table> -->
 
-<br>
+      <br>
 
-<span style="text-align:center;"><a href="about.html">About</a></span>
+      <span style="text-align:center;">
+        <a href="about.html">About</a>
+      </span>
 
-</div>
-</div>
+    </div>
+  </div>
 
-<div id="bgChangeContainer">
+  <div id="bgChangeContainer">
 
-<p>Use custom background:</p>
-<input type="file" id="bgfile">
-<input type="button" id="reset" value="Reset">
+    <p>Use custom background:</p>
+    <input type="file" id="bgfile">
+    <input type="button" id="reset" value="Reset">
 
-</div>
+  </div>
 
-<script src="customBG.js"></script>
-<script src="time.js"></script>
+  <script src="customBG.js"></script>
+  <script src="time.js"></script>
 
-<script type="text/javascript">
-var addToHomeConfig = {
-	returningVisitor: true,
-	expire: 2880,
-	touchIcon: true
-};
-</script>
-<script src="add2home.js"></script>
-    
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36421749-1']);
-  _gaq.push(['_trackPageview']);
+  <script type="text/javascript">
+    var addToHomeConfig = {
+      returningVisitor: true,
+      expire: 2880,
+      touchIcon: true
+    };
+  </script>
+  <script src="add2home.js"></script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36421749-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 
 </body>
 
