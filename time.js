@@ -2,35 +2,12 @@
 
 // This is the list of holidays, during which the day schedule does not change.
 var specialDates = [];
+specialDates.push([9, 1, 2014, "GHSLive will open on Wednesday"]);
+specialDates.push([9, 2, 2014, "GHSLive will open on Wednesday"]);
+/*
+Example:
 specialDates.push([9, 2, 2013, "GHSLive will open on Wednesday"]);
-specialDates.push([9, 3, 2013, "GHSLive will open on Wednesday"]);
-specialDates.push([10, 14, 2013, "Columbus Day"]);
-specialDates.push([11, 8, 2013, "Parent Teacher Conferences"]);
-specialDates.push([11, 11, 2013, "Veteran's Day"]);
-specialDates.push([11, 27, 2013, "Thanksgiving Break"]);
-specialDates.push([11, 28, 2013, "Thanksgiving Break"]);
-specialDates.push([11, 29, 2013, "Thanksgiving Break"]);
-specialDates.push([12, 21, 2013, "Winter Break"]);
-specialDates.push([12, 22, 2013, "Winter Break"]);
-specialDates.push([12, 23, 2013, "Winter Break"]);
-specialDates.push([12, 24, 2013, "Winter Break"]);
-specialDates.push([12, 25, 2013, "Winter Break"]);
-specialDates.push([12, 26, 2013, "Winter Break"]);
-specialDates.push([12, 27, 2013, "Winter Break"]);
-specialDates.push([12, 28, 2013, "Winter Break"]);
-specialDates.push([12, 29, 2013, "Winter Break"]);
-specialDates.push([12, 30, 2013, "Winter Break"]);
-specialDates.push([12, 31, 2013, "Winter Break"]);
-specialDates.push([1, 1, 2014, "New Years Day"]);
-specialDates.push([1, 20, 2014, "Martin Luther King Day"]);
-specialDates.push([1, 22, 2014, "Midterms"]);
-specialDates.push([1, 23, 2014, "Midterms"]);
-specialDates.push([1, 24, 2014, "Midterms"]);
-specialDates.push([2, 17, 2014, "February Break"]);
-specialDates.push([2, 18, 2014, "February Break"]);
-specialDates.push([2, 19, 2014, "February Break"]);
-specialDates.push([2, 20, 2014, "February Break"]);
-specialDates.push([2, 21, 2014, "February Break"]);
+*/
 
 // This is a list of the months of the year
 var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
@@ -141,7 +118,7 @@ console.log(displayBlockMessage(2, exampleTime));
 var prevDate;
 
 function load() {
-  var today = new Date(); // for debugging, use Y, M-1, D
+  var today = new Date(2014, 8, 3); // for debugging, use Y, M-1, D
   getSchedules(today.getDate(), today.getMonth(), today.getFullYear());
   updateTime();
 }
@@ -201,7 +178,7 @@ schedules[6] = [7, 3, 4, 5, 6];
 
 function getSchedules(day, month, year) {
   var oneDay = 24 * 60 * 60 * 1000;
-  var startingDate = new Date(2013, 8, 2); // Year, month - 1, day of a 12345 day
+  var startingDate = new Date(2014, 8, 1); // !!! Year, month - 1, day of a 12345 day !!!
   var startingUTC = startingDate.getTime();
   var endingDate = new Date(year, month, day);
   var endingUTC = endingDate.getTime();
