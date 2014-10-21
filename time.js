@@ -4,6 +4,8 @@
 var specialDates = [];
 specialDates.push([9, 1, 2014, "GHSLive will open on Wednesday"]);
 specialDates.push([9, 2, 2014, "GHSLive will open on Wednesday"]);
+specialDates.push([10, 13, 2014, "Columbus Day"]);
+specialDates.push([11, 4, 2014, "Election Day"]);
 /*
 Example:
 specialDates.push([9, 2, 2013, "GHSLive will open on Wednesday"]);
@@ -118,7 +120,7 @@ console.log(displayBlockMessage(2, exampleTime));
 var prevDate;
 
 function load() {
-  var today = new Date(2014, 8, 3); // for debugging, use Y, M-1, D
+  var today = new Date(); // for debugging, use Y, M-1, D
   getSchedules(today.getDate(), today.getMonth(), today.getFullYear());
   updateTime();
 }
